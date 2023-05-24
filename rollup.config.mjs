@@ -1,15 +1,22 @@
 import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
-import typescript from "@rollup/plugin-typescript";
+// import typescript from "@rollup/plugin-typescript";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
-
 import pkg from "./package.json" assert { type: "json" };
+import typescript from "rollup-plugin-typescript2";
+import { babel } from "@rollup/plugin-babel";
+import tailwind from "tailwindcss";
+import filesize from "rollup-plugin-filesize";
+import postcss from "rollup-plugin-postcss";
+
+const extensions = [".ts", ".js", ".tsx"];
 
 export default [
   {
     input: "src/index.ts",
     output: [
       {
+        interop: "auto",
         file: pkg.main,
         format: "cjs",
         sourcemap: true,
@@ -24,8 +31,20 @@ export default [
       peerDepsExternal(),
       resolve(),
       commonjs(),
-      typescript({ tsconfig: "./tsconfig.json" }),
+
+      typescript({
+        tsconfig: "tsconfig.json",
+      }),
+      postcss({
+        plugins: [tailwind()],
+      }),
+      babel({
+        babelHelpers: "bundled",
+        extensions,
+        include: ["src/**/*"],
+        exclude: "node_modules/**",
+      }),
+      filesize(),
     ],
-    external: ["react", "react-dom", "styled-components", "dayjs"],
   },
 ];

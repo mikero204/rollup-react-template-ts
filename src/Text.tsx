@@ -25,20 +25,17 @@ const AppContainer = styled.div`
 
 export default function Text({ src, alt, style, className }: HoverImageProps) {
   const [value, setValue] = useState(0);
+  const testEvent = () => {
+    console.log(123);
+  };
   return (
-    <div>
-      {" "}
-      <DivContainer>
-        {dayjs().format("YYYY/MM/DD")}
-        {value}
-        <div className="test">
-          <button onClick={() => setValue(value + 1)}>add</button>
-        </div>
-        <span className="hello">hello world</span>
-      </DivContainer>
-      <AppContainer>
-        <span className="hello">hello world</span>
-      </AppContainer>
-    </div>
+    <DivContainer>
+      {dayjs().format("YYYY/MM/DD")}
+      {value}
+      <div className="test">
+        <button onClick={() => setValue(value + 1)}>add</button>
+      </div>
+      <span className="hello">hello world4</span>
+    </DivContainer>
   );
 }
