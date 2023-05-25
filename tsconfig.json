@@ -13,6 +13,7 @@
     "outDir": "lib",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "emitDeclarationOnly": true
+    "emitDeclarationOnly": true,
+    "allowJs": true
   }
 }
