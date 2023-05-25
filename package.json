@@ -1,5 +1,5 @@
 {
-  "name": "react-styled-components-tailwindcss-typescript-template",
+  "name": "webui",
   "version": "1.0.1",
   "description": "react-styled-components-tailwindcss-typescript-template",
   "main": "./lib/cjs/index.js",
@@ -43,18 +43,31 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "dayjs": "^1.11.7",
-    "styled-components": "^6.0.0-rc.1"
+    "styled-components": "^6.0.0-rc.1",
+    "@chakra-ui/react": "^2.6.1",
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "framer-motion": "^10.12.16"
   },
   "peerDependencies": {
+    "@chakra-ui/react": "^2.6.1",
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
     "dayjs": "^1.11.7",
+    "framer-motion": "^10.12.16",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^6.0.0-rc.1"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.6.1",
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
     "dayjs": "^1.11.7",
+    "framer-motion": "^10.12.16",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.8.0",
     "styled-components": "^6.0.0-rc.1"
   }
 }

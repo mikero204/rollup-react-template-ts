@@ -46,5 +46,11 @@ export default [
       terser(), //壓縮混淆
       filesize(), //show file size
     ],
+    onwarn: function (warning) {
+      if (warning.code === "THIS_IS_UNDEFINED") {
+        return;
+      }
+      console.error(warning.message);
+    },
   },
 ];
