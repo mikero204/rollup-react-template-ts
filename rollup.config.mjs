@@ -7,6 +7,7 @@ import { babel } from "@rollup/plugin-babel";
 import tailwind from "tailwindcss";
 import filesize from "rollup-plugin-filesize";
 import postcss from "rollup-plugin-postcss";
+import terser from "@rollup/plugin-terser";
 
 const extensions = [".ts", ".js", ".tsx", "jsx"];
 
@@ -28,11 +29,11 @@ export default [
     ],
     plugins: [
       peerDepsExternal(), //排除peerDep打包
-      resolve(),
-      commonjs(),
+      resolve(), // node use
+      commonjs(), //commonjs support
       typescript({
         tsconfig: "tsconfig.json",
-      }),
+      }), //ts support
       postcss({
         plugins: [tailwind()], //tailwind支援
       }),
@@ -42,7 +43,8 @@ export default [
         include: ["src/**/*"],
         exclude: "node_modules/**",
       }), //format to es
-      filesize(),
+      terser(), //壓縮混淆
+      filesize(), //show file size
     ],
   },
 ];
