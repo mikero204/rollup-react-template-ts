@@ -1,7 +1,7 @@
 {
-  "name": "housekeepermike204",
+  "name": "react-styled-components-tailwindcss-typescript-template",
   "version": "1.0.1",
-  "description": "TEST UI ",
+  "description": "react-styled-components-tailwindcss-typescript-template",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
   "types": "./lib/esm/index.d.ts",
@@ -33,11 +33,11 @@
   "author": "Mike",
   "license": "MIT",
   "keywords": [
-    "react-template",
-    "react-library",
-    "typescript",
     "react",
-    "template"
+    "styled-components",
+    "tailwindcss",
+    "ssr",
+    "csr"
   ],
   "resolutions": {
     "react": "^18.2.0",
@@ -52,6 +52,9 @@
     "styled-components": "^6.0.0-rc.1"
   },
   "dependencies": {
-    "dayjs": "^1.11.7"
+    "dayjs": "^1.11.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^6.0.0-rc.1"
   }
 }

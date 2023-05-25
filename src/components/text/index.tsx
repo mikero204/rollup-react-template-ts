@@ -1,7 +1,7 @@
 import React, { CSSProperties, useState } from "react";
 import styled from "styled-components";
 import dayjs from "dayjs";
-type HoverImageProps = {
+type TextProps = {
   src?: string;
   alt?: string;
   className?: string;
@@ -23,11 +23,9 @@ const AppContainer = styled.div`
   }
 `;
 
-export default function Text({ src, alt, style, className }: HoverImageProps) {
+export default function Text(props: TextProps) {
   const [value, setValue] = useState(0);
-  const testEvent = () => {
-    console.log(123);
-  };
+
   return (
     <DivContainer>
       {dayjs().format("YYYY/MM/DD")}
